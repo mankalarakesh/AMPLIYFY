@@ -14,6 +14,7 @@ const schema = a.schema({
     .authorization((allow) => [allow.publicApiKey()]),
     MVV:  a
     .model({
+      Firmid: a.string().required(),
       Mission: a.customType({
             title: a.string(),
             description: a.string(),
@@ -26,7 +27,7 @@ const schema = a.schema({
             title: a.string(),
             description: a.string(),
       }),
-    })
+    }).identifier(["Firmid"])
     .authorization((allow) => [allow.publicApiKey()]),
 });
 

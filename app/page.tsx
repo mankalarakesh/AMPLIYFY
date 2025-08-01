@@ -36,6 +36,7 @@ export default function App() {
   }
    function createMvv() {
     client.models.MVV.create({
+      Firmid: "12345",
       Mission: { title: "Bob", description: "test" },
       Vision: { title: "Bob", description: "test" },
       Values: { title: "Bob", description: "test" },
