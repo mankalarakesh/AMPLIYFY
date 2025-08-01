@@ -7,6 +7,9 @@ import "./../app/app.css";
 import { Amplify } from "aws-amplify";
 import outputs from "@/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
+import { Mission } from "./DTO/Mission";
+import { Value } from "./DTO/Value";
+import { Vision } from "./DTO/Vision";
 
 Amplify.configure(outputs);
 
@@ -28,6 +31,14 @@ export default function App() {
   function createTodo() {
     client.models.Todo.create({
       content: window.prompt("Todo content"),
+    });
+    createMvv();
+  }
+   function createMvv() {
+    client.models.MVV.create({
+      Mission: { title: "Bob", description: "test" },
+      Vision: { title: "Bob", description: "test" },
+      Values: { title: "Bob", description: "test" },
     });
   }
 

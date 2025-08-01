@@ -14,9 +14,18 @@ const schema = a.schema({
     .authorization((allow) => [allow.publicApiKey()]),
     MVV:  a
     .model({
-      Mission: a.string(),
-      Vision: a.string(),
-      Values: a.string(),
+      Mission: a.customType({
+            title: a.string(),
+            description: a.string(),
+      }),
+      Vision: a.customType({
+            title: a.string(),
+            description: a.string(),
+      }),
+      Values:  a.customType({
+            title: a.string(),
+            description: a.string(),
+      }),
     })
     .authorization((allow) => [allow.publicApiKey()]),
 });
